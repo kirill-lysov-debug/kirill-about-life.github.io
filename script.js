@@ -21,7 +21,7 @@ const phrases = [
     "Creating the future today",
     "Innovation in every detail", 
     "Quality comes first",
-    "Страсть к совершенству",
+    "Passion for excellence",
     "Превращаю идеи в реальность"
 ];
 
