@@ -20,7 +20,7 @@ setInterval(changeBackgroundPhoto, 8000);
 const phrases = [
     "Creating the future today",
     "Innovation in every detail", 
-    "Качество превыше всего",
+    "Quality comes first",
     "Страсть к совершенству",
     "Превращаю идеи в реальность"
 ];
