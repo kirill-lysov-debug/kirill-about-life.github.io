@@ -23,11 +23,22 @@
     </header>
 
     <section id="showcase">
-        <div class="container">
-            <h1>Вот немного обо мне:</h1>
-            <p>Работаю, пока другие спят</p>
+    <div class="container">
+        <h1>Добро пожаловать на мою страницу</h1>
+        <div class="motivational-phrases">
+            <span class="phrase active">Мечтай. Действуй. Достигай.</span>
+            <span class="phrase">Каждый день - новая возможность</span>
+            <span class="phrase">Верь в себя и всё получится</span>
+            <span class="phrase">Не останавливайся на достигнутом</span>
+            <span class="phrase">Успех - это путь, а не пункт назначения</span>
+            <span class="phrase">Ты способен на большее, чем думаешь</span>
+            <span class="phrase">Маленькие шаги ведут к большим целям</span>
+            <span class="phrase">Сегодняшние усилия - завтрашние результаты</span>
+            <span class="phrase">Будь тем изменением, которое хочешь видеть</span>
+            <span class="phrase">Никогда не поздно стать тем, кем хочешь быть</span>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="main">
         <div class="container">
@@ -56,8 +67,65 @@
     <footer>
         <p>Ваше Имя &copy; 2024</p>
     </footer>
+    <script>
+    // Массив с фразами
+    const phrases = [
+        "Мечтай. Действуй. Достигай.",
+        "Каждый день - новая возможность",
+        "Верь в себя и всё получится", 
+        "Не останавливайся на достигнутом",
+        "Успех - это путь, а не пункт назначения",
+        "Ты способен на большее, чем думаешь",
+        "Маленькие шаги ведут к большим целям",
+        "Сегодняшние усилия - завтрашние результаты",
+        "Будь тем изменением, которое хочешь видеть",
+        "Никогда не поздно стать тем, кем хочешь быть"
+    ];
+
+    let currentPhraseIndex = 0;
+    const phraseElement = document.querySelector('.phrase');
+    const phrasesContainer = document.querySelector('.motivational-phrases');
+
+    function changePhrase() {
+        // Удаляем старую фразу
+        const activePhrase = document.querySelector('.phrase.active');
+        if (activePhrase) {
+            activePhrase.classList.remove('active');
+            activePhrase.classList.add('fading-out');
+            
+            setTimeout(() => {
+                activePhrase.remove();
+                
+                // Создаем новую фразу
+                const newPhrase = document.createElement('span');
+                newPhrase.className = 'phrase';
+                newPhrase.textContent = phrases[currentPhraseIndex];
+                phrasesContainer.appendChild(newPhrase);
+                
+                // Активируем анимацию
+                setTimeout(() => {
+                    newPhrase.classList.add('active');
+                }, 50);
+                
+            }, 800);
+        }
+        
+        // Увеличиваем индекс для следующей фразы
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+    }
+
+    // Запускаем смену фраз каждые 3 секунды
+    setInterval(changePhrase, 3000);
+
+    // Инициализация первой фразы
+    document.addEventListener('DOMContentLoaded', function() {
+        const firstPhrase = document.querySelector('.phrase');
+        firstPhrase.classList.add('active');
+    });
+</script>
 </body>
 
 </html>
+
 
 
