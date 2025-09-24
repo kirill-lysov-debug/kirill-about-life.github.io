@@ -1,22 +1,16 @@
-// Смена фоновых фото
 const backgroundPhotos = document.querySelectorAll('.background-photo');
 let currentPhotoIndex = 0;
 
 function changeBackgroundPhoto() {
-    // Убираем активный класс с текущего фото
     backgroundPhotos[currentPhotoIndex].classList.remove('active');
     
-    // Увеличиваем индекс
     currentPhotoIndex = (currentPhotoIndex + 1) % backgroundPhotos.length;
     
-    // Добавляем активный класс новому фото
     backgroundPhotos[currentPhotoIndex].classList.add('active');
 }
 
-// Меняем фото каждые 8 секунд
 setInterval(changeBackgroundPhoto, 8000);
 
-// Мотивационные фразы
 const phrases = [
     "Creating the future today",
     "Innovation in every detail", 
@@ -54,7 +48,6 @@ function changePhrase() {
 
 setInterval(changePhrase, 3000);
 
-// Анимации при прокрутке
 function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -72,7 +65,6 @@ function handleScrollAnimations() {
     });
 }
 
-// Инициализация
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(handleScrollAnimations, 100);
     window.addEventListener('scroll', handleScrollAnimations);
