@@ -1,4 +1,3 @@
-/* Глобальные стили для золотой темы */
 :root {
     --gold-primary: #D4AF37;
     --gold-secondary: #FFD700;
@@ -25,7 +24,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Стили для фона с несколькими фото */
 .background-container {
     position: fixed;
     top: 0;
@@ -51,23 +49,19 @@ body {
     opacity: 1;
 }
 
-/* Фото 1 - основное */
 .photo-1 {
     background-image: url('images/background-1.jpg');
 }
 
-/* Фото 2 - дополнительное */
 .photo-2 {
     background-image: url('images/background-2.jpg');
 }
 
-/* Фото 3 - текстура */
 .photo-3 {
     background-image: url('images/gold-texture.jpg');
     opacity: 0.1 !important;
 }
 
-/* Контейнер */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -75,7 +69,6 @@ body {
     padding: 0 20px;
 }
 
-/* Хедер */
 header {
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
@@ -138,7 +131,6 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* Главный баннер */
 #showcase {
     min-height: 100vh;
     display: flex;
@@ -164,10 +156,9 @@ nav a:hover::after {
     margin-bottom: 2rem;
 }
 
-/* Мотивационные фразы */
 .motivational-phrases {
     position: relative;
-    height: 80px;
+    height: 100px;
     margin: 2rem 0;
     overflow: hidden;
 }
@@ -191,7 +182,6 @@ nav a:hover::after {
     transform: translateY(0);
 }
 
-/* Основной контент */
 #main {
     padding: 5rem 0;
 }
@@ -229,7 +219,6 @@ nav a:hover::after {
     background: var(--gold-primary);
 }
 
-/* Навыки */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -257,7 +246,6 @@ nav a:hover::after {
     margin-bottom: 1rem;
 }
 
-/* Контакты */
 .contact-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -285,7 +273,6 @@ nav a:hover::after {
     color: var(--gold-primary);
 }
 
-/* Футер */
 footer {
     background: rgba(26, 26, 26, 0.95);
     border-top: 2px solid var(--gold-primary);
@@ -317,7 +304,6 @@ footer {
     transform: scale(1.2);
 }
 
-/* Анимации появления при прокрутке */
 .scroll-animate {
     opacity: 0;
     transform: translateY(50px);
@@ -329,7 +315,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2.5rem;
@@ -352,3 +337,4 @@ footer {
         padding: 2rem 1rem;
     }
 }
+
