@@ -9,6 +9,17 @@
     --text-gold: #D4AF37;
     --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
 }
+.photo-1 {
+    background-image: url('images/photo-1.jpg');
+}
+
+.photo-2 {
+    background-image: url('photo-2.jpg');
+}
+
+.photo-3 {
+    background-image: url('photo-3.jpg');
+}
 
 * {
     margin: 0;
@@ -337,4 +348,5 @@ footer {
         padding: 2rem 1rem;
     }
 }
+
 
