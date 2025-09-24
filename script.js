@@ -22,7 +22,7 @@ const phrases = [
     "Innovation in every detail", 
     "Quality comes first",
     "Passion for excellence",
-    "Превращаю идеи в реальность"
+    "Turning ideas into reality"
 ];
 
 let currentPhraseIndex = 0;
