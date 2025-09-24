@@ -1,12 +1,175 @@
-/* Стили для мотивационных фраз */
+/* Глобальные стили для золотой темы */
+:root {
+    --gold-primary: #D4AF37;
+    --gold-secondary: #FFD700;
+    --gold-dark: #B8860B;
+    --gold-light: #FFF8DC;
+    --dark-bg: #1a1a1a;
+    --dark-card: #2d2d2d;
+    --text-light: #ffffff;
+    --text-gold: #D4AF37;
+    --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    background: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Стили для фона с несколькими фото */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.background-photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.background-photo.active {
+    opacity: 1;
+}
+
+/* Фото 1 - основное */
+.photo-1 {
+    background-image: url('images/background-1.jpg');
+}
+
+/* Фото 2 - дополнительное */
+.photo-2 {
+    background-image: url('images/background-2.jpg');
+}
+
+/* Фото 3 - текстура */
+.photo-3 {
+    background-image: url('images/gold-texture.jpg');
+    opacity: 0.1 !important;
+}
+
+/* Контейнер */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Хедер */
+header {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid var(--gold-primary);
+    box-shadow: var(--shadow-gold);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--gold-primary);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--text-light);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+nav a:hover {
+    color: var(--gold-primary);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold-primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Главный баннер */
+#showcase {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--gold-primary), var(--gold-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content .subtitle {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    margin-bottom: 2rem;
+}
+
+/* Мотивационные фразы */
 .motivational-phrases {
     position: relative;
-    height: 60px;
-    margin: 20px 0;
+    height: 80px;
+    margin: 2rem 0;
     overflow: hidden;
-    font-size: 24px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .phrase {
@@ -14,11 +177,13 @@
     top: 0;
     left: 0;
     width: 100%;
-    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 300;
+    font-style: italic;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease-in-out;
-    color: #ffd700; /* Золотой цвет для фраз */
+    color: var(--gold-light);
 }
 
 .phrase.active {
@@ -26,190 +191,164 @@
     transform: translateY(0);
 }
 
-/* Анимация появления фраз */
-@keyframes phraseChange {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    20% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    80% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
+/* Основной контент */
+#main {
+    padding: 5rem 0;
 }
 
-/* Альтернативный вариант анимации - fade in/out */
-@keyframes fadeInOut {
-    0% { opacity: 0; }
-    20% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; }
+.section-card {
+    background: var(--dark-card);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Дополнительные стили для showcase */
-#showcase {
-    min-height: 400px;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/your-background.jpg') no-repeat center center/cover;
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+}
+
+.section-card h2 {
+    color: var(--gold-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--gold-primary);
+}
+
+/* Навыки */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-item {
     text-align: center;
-    color: #ecf0f1;
+    padding: 2rem;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: scale(1.05);
+}
+
+.skill-item i {
+    font-size: 3rem;
+    color: var(--gold-primary);
+    margin-bottom: 1rem;
+}
+
+/* Контакты */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-#showcase h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    animation: fadeIn 1.5s ease-in;
+.contact-item:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: translateX(10px);
 }
 
-/* Анимация для заголовка */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.contact-item i {
+    font-size: 2rem;
+    color: var(--gold-primary);
 }
 
-/* Эффект свечения для фраз */
-.phrase {
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7),
-                 0 0 20px rgba(255, 215, 0, 0.5),
-                 0 0 30px rgba(255, 215, 0, 0.3);
+/* Футер */
+footer {
+    background: rgba(26, 26, 26, 0.95);
+    border-top: 2px solid var(--gold-primary);
+    padding: 2rem 0;
+    text-align: center;
 }
 
-/* Адаптивность для мобильных устройств */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--gold-primary);
+    transform: scale(1.2);
+}
+
+/* Анимации появления при прокрутке */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-in-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
-    .motivational-phrases {
-        height: 80px;
-        font-size: 18px;
+    .hero-content h1 {
+        font-size: 2.5rem;
     }
     
-    #showcase h1 {
-        font-size: 36px;
+    .phrase {
+        font-size: 1.3rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .section-card {
+        padding: 2rem 1rem;
     }
 }
-
-/* Дополнительные эффекты при наведении */
-.motivational-phrases:hover .phrase {
-    animation-duration: 1.2s;
-}
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000000;
-    color: #333;
-    line-height: 1.6;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Стили для шапки */
-header {
-    background: #2c3e50;
-    color: #808080;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #e74c3c 3px solid;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header a {
-    color: #ecf0f1;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-header a:hover {
-    color: #e74c3c;
-}
-
-header ul {
-    padding: 0;
-    list-style: none;
-}
-
-header li {
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-
-header #branding {
-    float: left;
-}
-
-header #branding h1 {
-    margin: 0;
-}
-
-header nav {
-    float: right;
-    margin-top: 10px;
-}
-
-/* Стили для главного баннера */
-#showcase {
-    min-height: 400px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/your-background.jpg') no-repeat center center/cover;
-    text-align: center;
-    color: #ecf0f1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#showcase h1 {
-    font-size: 70px;
-    margin-bottom: 20px;
-}
-
-/* Стили для основного контента */
-#main {
-    padding: 40px 0;
-}
-
-#main h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #e74c3c;
-    padding-bottom: 10px;
-}
-
-article {
-    margin-bottom: 40px;
-}
-
-/* Стили для подвала */
-footer {
-    padding: 20px;
-    margin-top: 20px;
-    color: #ecf0f1;
-    background-color: #2c3e50;
-    text-align: center;
-
-}
-
-
-
-
