@@ -19,7 +19,7 @@ setInterval(changeBackgroundPhoto, 8000);
 // Мотивационные фразы
 const phrases = [
     "Creating the future today",
-    "Инновации в каждой детали", 
+    "Innovation in every detail", 
     "Качество превыше всего",
     "Страсть к совершенству",
     "Превращаю идеи в реальность"
