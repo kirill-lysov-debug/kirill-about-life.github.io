@@ -134,9 +134,71 @@
         firstPhrase.classList.add('active');
     });
 </script>
+    <script>
+// Функция для проверки видимости элемента
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+        rect.bottom >= 0
+    );
+}
+
+// Функция для обработки анимаций при прокрутке
+function handleScrollAnimations() {
+    const elements = document.querySelectorAll('.scroll-animate');
+    
+    elements.forEach(element => {
+        if (isElementInViewport(element)) {
+            element.classList.add('visible');
+        }
+    });
+}
+
+// Функция для throttle (оптимизация производительности)
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', function() {
+    // Проверяем видимые элементы сразу после загрузки
+    setTimeout(handleScrollAnimations, 100);
+    
+    // Добавляем обработчик прокрутки с throttle
+    window.addEventListener('scroll', throttle(handleScrollAnimations, 50));
+    
+    // Также проверяем при изменении размера окна
+    window.addEventListener('resize', handleScrollAnimations);
+});
+
+// Дополнительная анимация для прогресс-баров навыков (если нужно)
+function animateSkills() {
+    const skills = document.querySelectorAll('#skills .skill-level');
+    skills.forEach(skill => {
+        if (isElementInViewport(skill.parentElement)) {
+            const level = skill.style.width;
+            skill.style.width = '0';
+            setTimeout(() => {
+                skill.style.width = level;
+            }, 300);
+        }
+    });
+}
+</script>
 </body>
 
 </html>
+
 
 
 
