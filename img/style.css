@@ -10,15 +10,13 @@
     --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 .photo-1 {
-    background-image: url('img/images1/photo-1.jpg');
+    background-image: url('images/photo-1.jpg');
 }
-
 .photo-2 {
-    background-image: url('img/images1/photo-2.jpg');
+    background-image: url('images/photo-2.jpg');
 }
-
 .photo-3 {
-    background-image: url('img/images1/photo-3.jpg');
+    background-image: url('images/photo-3.jpg');
 }
 
 * {
