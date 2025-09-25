@@ -55,24 +55,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-
-.background-photo.active {
-    opacity: 1;
-}
-
-.photo-1 {
-    background-image: url('imag/images1/photo-1.jpg');
-}
-
-.photo-2 {
-    background-image: url('imag/images1/photo-2.jpg');
-}
-
-.photo-3 {
-    background-image: url('imag/images1/photo-3.jpg');
-    opacity: 0.1 !important;
-}
-
 .container {
     width: 90%;
     max-width: 1200px;
@@ -348,6 +330,7 @@ footer {
         padding: 2rem 1rem;
     }
 }
+
 
 
 
