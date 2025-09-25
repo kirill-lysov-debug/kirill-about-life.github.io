@@ -61,15 +61,15 @@ body {
 }
 
 .photo-1 {
-    background-image: url('images/background-1.jpg');
+    background-image: url('imag/images1/photo-1.jpg');
 }
 
 .photo-2 {
-    background-image: url('images/background-2.jpg');
+    background-image: url('imag/images1/photo-2.jpg');
 }
 
 .photo-3 {
-    background-image: url('images/gold-texture.jpg');
+    background-image: url('imag/images1/photo-3.jpg');
     opacity: 0.1 !important;
 }
 
@@ -348,6 +348,7 @@ footer {
         padding: 2rem 1rem;
     }
 }
+
 
 
 
